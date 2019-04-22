@@ -47,8 +47,10 @@ def sql_inject(url):
 
 	try:
 		res = requests.get(url,payload,timeout=1)
-		if res.status_code == res.codes.ok:
-			result = url+" sql inject sucess, flag is "+res.text
+		res = res.text
+		#可根据正则匹配扩展，懒得写了
+		if res.find('Invalid') == -1 and res.find('error')==-1: 
+			result = url+" sql inject sucess, flag is "+res
 			print result
 			print >>flag,result
 		else:
