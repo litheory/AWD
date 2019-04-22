@@ -99,10 +99,17 @@ def usage():
     print
     print "Usage: exploit.py -h [host] -a [seg_start] -b [seg_stop] - p [port] -m [method]"
     print
+    print "-h --host		host to C name, examples:192.168.0"
+    print "-a --seg_start	network segment range start, range is 0 to 255"
+    print "-b --seg_stop	network segment range stop, range is 0 to 255"
+    print "-p --port		the port which services denpend on, range is 0, 65535 (Most Web Service is at 80)"
+    print "-m --method		the exploit method, denpends on your define"
+    print
     print "Examples:"
     print "exploit.py -h 192.168.0 -a 30 -b 51 -p 80 -m oneword"
     print "exploit.py -h 192.168.0 -a 30 -b 51 -p 80 -m sqli"
     sys.exit(0)
+
 
 if __name__ == '__main__':
 
